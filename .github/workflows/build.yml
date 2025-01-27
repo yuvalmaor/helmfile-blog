@@ -13,10 +13,7 @@ permissions:
 jobs:
   generate-yaml:
     runs-on: ubuntu-latest
-    - name : ls pwd
-      run: |
-        ls
-        pwd
+
     steps:
     # Step 1: Checkout the 'gitops-blog' repository
     - name: Checkout repository
@@ -24,6 +21,10 @@ jobs:
       with:
         repository: yuvalmaor/gitops-blog  # Make sure this targets the correct repository
         token: ${{ secrets.PAT_TOKEN }}  # Use the PAT token to authenticate
+    - name : ls pwd
+      run: |
+        ls
+        pwd
     # Step 2: Delete generated.yaml if it exists
     - name: Delete generated.yaml if it exists
       run: |
