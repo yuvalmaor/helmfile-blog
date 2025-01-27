@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: yuvalmaor/gitops-blog  # Make sure this targets the correct repository
-
+        token: ${{ secrets.PAT_TOKEN }}  # Use the PAT token to authenticate
     # Step 2: Delete generated.yaml if it exists
     - name: Delete generated.yaml if it exists
       run: |
