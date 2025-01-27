@@ -43,7 +43,7 @@ jobs:
         helmfile template | tee generated.yaml
 
     # Step 5: Commit and push the changes back to the 'gitops-blog' repository using PAT
-    - name: Commit and push changes
+    - name: Commit and push changes 
       env:
         TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
