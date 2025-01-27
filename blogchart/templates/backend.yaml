@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: "docker.io/ym53/blogbackend:0.1.1"  # Replace with your private image
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: my-registry-secret  # Reference to the secret created earlier
