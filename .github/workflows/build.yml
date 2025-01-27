@@ -35,3 +35,18 @@ jobs:
         run: |
           echo "Listing all files in the repository:"
           ls -la ./target-repo
+
+      - name: Install Helm and Helmfile
+        run: |
+          curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+          chmod 700 get_helm.sh
+          ./get_helm.sh
+      - name : ls pwd
+        run: |
+          ls
+          pwd
+      # Step 4: Generate new generated.yaml using helmfile template
+      - name: Generate new generated.yaml
+        run: |
+          echo "Running helmfile template to generate generated.yaml"
+          helmfile template | tee generated.yaml
