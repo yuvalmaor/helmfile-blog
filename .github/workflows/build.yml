@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main  # Adjust this to the branch you want the pipeline to run on
+      
+permissions:
+  contents: write
 
 jobs:
   generate-yaml:
