@@ -86,6 +86,8 @@ jobs:
           
       # Step 7: Commit and push the changes to the target repository
       - name: Commit and push changes to target repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           cd target-repo
           ls -la 
