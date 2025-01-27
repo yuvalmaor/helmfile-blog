@@ -1,0 +1,16 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main  # Trigger this action on pushes to the main branch (adjust as needed)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: echo version
+        run: |
+          echo "hello"
