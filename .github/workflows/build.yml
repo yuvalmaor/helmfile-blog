@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: List files
+      run: |
+        ls -al /home/runner/work/helmfile-blog
     - name : ls pwd
       run: |
         ls -R
