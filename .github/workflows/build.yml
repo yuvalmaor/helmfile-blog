@@ -20,6 +20,7 @@ jobs:
         ls
         pwd
         ls ..
+        ls -la
     # Step 1: Checkout the 'gitops-blog' repository
     - name: Checkout repository
       uses: actions/checkout@v3
