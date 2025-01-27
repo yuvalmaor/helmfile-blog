@@ -60,11 +60,17 @@ jobs:
         run: |
           echo "Replacing generated.yaml in target repository"
           cp ./generated.yaml ./target-repo/generated.yaml
-      
+      - name: cat
+        run: |
+          cat generated.yaml
+          cat ./target-repo/generated.yaml
+          
       # Step 7: Commit and push the changes to the target repository
       - name: Commit and push changes to target repository
         run: |
           cd target-repo
+          ls -la 
+
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add generated.yaml
