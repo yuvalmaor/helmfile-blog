@@ -45,6 +45,23 @@ jobs:
         run: |
           ls
           pwd
+      - name: Download Helmfile
+        run: |
+          curl -L -o helmfile.tar.gz https://github.com/helmfile/helmfile/releases/download/v0.170.1/helmfile_0.170.1_linux_amd64.tar.gz
+
+      - name: Extract Helmfile
+        run: |
+          mkdir helmfile-bin
+          tar -xzf helmfile.tar.gz -C helmfile-bin
+
+      - name: Install Helmfile
+        run: |
+          sudo mv helmfile-bin/helmfile /usr/local/bin/
+          chmod +x /usr/local/bin/helmfile
+
+      - name: Verify Helmfile Installation
+        run: |
+          helmfile version
       # Step 4: Generate new generated.yaml using helmfile template
       - name: Generate new generated.yaml
         run: |
