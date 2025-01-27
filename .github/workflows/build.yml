@@ -13,7 +13,10 @@ permissions:
 jobs:
   generate-yaml:
     runs-on: ubuntu-latest
-
+    - name : ls pwd
+      run: |
+        ls
+        pwd
     steps:
     # Step 1: Checkout the 'gitops-blog' repository
     - name: Checkout repository
@@ -37,7 +40,10 @@ jobs:
         curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
         chmod 700 get_helm.sh
         ./get_helm.sh
-
+    - name : ls pwd
+      run: |
+        ls
+        pwd
     # Step 4: Generate new generated.yaml using helmfile template
     - name: Generate new generated.yaml
       run: |
