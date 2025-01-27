@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name : ls pwd
+      run: |
+        ls
+        pwd
     # Step 1: Checkout the 'gitops-blog' repository
     - name: Checkout repository
       uses: actions/checkout@v3
