@@ -23,8 +23,28 @@ releases:
     namespace: ingress-nginx 
     createNamespace: true 
 
+
+  - name: namespace-ingress-nginx
+    chart: null
+    namespace: ""
+    rendered: true
+    manifests:
+      - apiVersion: v1
+        kind: Namespace
+        metadata:
+          name: ingress-nginx
+          
   - name: external-secrets
     chart: external-secrets/external-secrets
     version: 0.13.0  # Match the version of ESO you referenced
     namespace: external-secrets 
-    createNamespace: true 
+
+  - name: namespace-external-secrets
+    chart: null
+    namespace: ""
+    rendered: true
+    manifests:
+      - apiVersion: v1
+        kind: Namespace
+        metadata:
+          name: external-secrets
