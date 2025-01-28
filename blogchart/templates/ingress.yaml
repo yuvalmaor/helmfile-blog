@@ -10,13 +10,13 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-headers: "Content-Type, Authorization"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
 spec:
-  ingressClassName: nginx
+  ingressClassName: {{  .Values.frontend.ingress.ingressClassName }}
   tls:
   - hosts:
-    - blog.yuvallab.xyz
+    - {{ .Values.frontend.ingress.host }}
     secretName: app-tls-secret
   rules:
-  - host: blog.yuvallab.xyz
+  - host: {{ .Values.frontend.ingress.host }}
     http:
       paths:
       - path: /

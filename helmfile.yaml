@@ -1,6 +1,8 @@
 repositories:
   - name: ingress-nginx
     url: https://kubernetes.github.io/ingress-nginx
+  - name: external-secrets
+    url: https://charts.external-secrets.io
 
 environments:
   PROD:

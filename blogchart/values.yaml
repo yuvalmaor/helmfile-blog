@@ -22,6 +22,8 @@ namespace: default
 frontend:
   ingress:
     enabled: true
+    ingressClassName: nginx
+    host: blog.yuvallab.xyz
   service:
     type: ClusterIP
     port: 80
