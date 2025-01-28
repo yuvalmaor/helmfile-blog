@@ -70,7 +70,7 @@ jobs:
 
           helmfile -e PROD --selector name=my-release template | tee generated-PROD.yaml
           helmfile -e DEV --selector name=my-release template | tee generated-DEV.yaml
-          helmfile --selector name=ingress-nginx template | tee generated.yaml
+          helmfile --selector name=ingress-nginx --selector name=external-secrets template | tee generated.yaml
       - name: print yaml
         run: |
           helmfile --selector name=ingress-nginx template

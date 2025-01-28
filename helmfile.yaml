@@ -23,3 +23,8 @@ releases:
     version: "1.0.0"
     values:
       - {{ .Environment.Name }}/blogchart-values.yaml
+
+  - name: external-secrets
+    chart: external-secrets/external-secrets
+    version: 0.13.0  # Match the version of ESO you referenced
+    namespace: external-secrets 
