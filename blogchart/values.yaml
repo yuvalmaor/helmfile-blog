@@ -38,7 +38,7 @@ frontend:
     port: 80
   image:
     repository: "docker.io/ym5533/blogfrontend"
-    frontendtag: "0.1.11"
+    frontendtag: "0.1.12"
     imagePullSecrets: registry-secret
 
 #This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
