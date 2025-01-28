@@ -27,7 +27,7 @@ frontend:
   service:
     type: ClusterIP
     port: 80
-    name: frontendservice
+    name: frontend-service
   deployment:
     name: frontend-app-deployhment
 
