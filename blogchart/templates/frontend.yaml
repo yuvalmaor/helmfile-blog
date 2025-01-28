@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: your-app
-  namespace: default
+  name: {{ .Values.frontend.deployment.name }}
+  namespace: {{ .Values.frontend.deployment.namespace }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.frontend.deployment.replicas }}
   selector:
     matchLabels:
-      app: your-app
+      app: {{ .Values.frontend.deployment.app }}
   template:
     metadata:
       labels:
-        app: your-app
+        app: {{ .Values.frontend.deployment.app }}
     spec:
       containers:
-        - name: your-app
-          image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.frontendtag }}"  # Replace with your private image
+        - name: {{ .Values.frontend.container.name }}
+          image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.frontendtag }}"
           ports:
-            - containerPort: 80
+            - containerPort: {{ .Values.frontend.container.port }}
       imagePullSecrets:
-        - name: registry-secret  # Reference to the secret created earlier
+        - name: {{ .Values.frontend.imagePullSecrets }}
