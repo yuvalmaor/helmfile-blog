@@ -2,6 +2,12 @@ repositories:
   - name: ingress-nginx
     url: https://kubernetes.github.io/ingress-nginx
 
+environments:
+  PROD:
+  DEV:
+
+
+
 releases:
   - name: ingress-nginx
     chart: ingress-nginx/ingress-nginx
