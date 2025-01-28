@@ -28,7 +28,7 @@ frontend:
     name: frontend-service
   deployment:
     name: frontend-app-deployhment
-    namespace: default
+
     replicas: 1
     app: frontend-app
   container:
