@@ -73,7 +73,7 @@ jobs:
           helmfile --selector name=ingress-nginx template | tee generated.yaml
       - name: print yaml
         run: |
-          helmfile template
+          helmfile --selector name=ingress-nginx template
           
       - name: List all files in the repository
         run: |
