@@ -63,10 +63,11 @@ jobs:
         run: |
           helmfile version
       # Step 4: Generate new generated.yaml using helmfile template
+             #   helmfile template | tee generated.yaml
       - name: Generate new generated.yaml
         run: |
           echo "Running helmfile template to generate generated.yaml"
-       #   helmfile template | tee generated.yaml
+
           helmfile -e PROD --selector name=my-release template | tee generated-PROD.yaml
           helmfile -e DEV --selector name=my-release template | tee generated-DEV.yaml
           helmfile --selector name=ingress-nginx template | tee generated.yaml
