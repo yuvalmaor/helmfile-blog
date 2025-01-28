@@ -21,7 +21,7 @@ fullnameOverride: ""
 
 frontend:
   deployment:
-    name: frontend-app
+    name: frontend-app-deployhment
     namespace: default
     replicas: 1
     app: frontend-app
