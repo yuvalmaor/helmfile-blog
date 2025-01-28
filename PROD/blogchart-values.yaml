@@ -1,1 +1,4 @@
 namespace: prod
+frontend:
+  ingress:
+    enabled: false
