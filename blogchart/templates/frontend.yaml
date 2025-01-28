@@ -19,4 +19,4 @@ spec:
           ports:
             - containerPort: {{ .Values.frontend.container.port }}
       imagePullSecrets:
-        - name: registry-secret
+        - name: {{ .Values.frontend.image.imagePullSecrets }}
