@@ -13,6 +13,5 @@ releases:
   - name: my-release
     chart: ./blogchart
     version: "1.0.0"
-    namespace: default
-  #  values:
-  #    - values.yaml
+    values:
+      - {{ .Environment.Name }}/blogchart-values.yaml

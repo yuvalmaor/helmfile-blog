@@ -18,8 +18,14 @@ imagePullSecrets: []
 # This is to override the chart name.
 nameOverride: ""
 fullnameOverride: ""
-
+namespace: default
 frontend:
+  ingress:
+    enabled: true
+  service:
+    type: ClusterIP
+    port: 80
+    name: frontend-service
   deployment:
     name: frontend-app-deployhment
     namespace: default
